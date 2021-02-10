@@ -9,6 +9,7 @@
     * i.e. a link is handled in vue JS bundle
 * Unlike react, you can have multiple root components (parents)
 * render content from one component anywhere in the DOM
+* vscode Vue syntax highlight extention: Vetur
 
 
 
