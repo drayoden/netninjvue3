@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    
     <title>Learning Vue3</title>
 </head>
 <body>
+
+
     <h1>Hello Moose Muscles!</h1>
-    
+    <div id="app">
+        
+        <!-- 'v-if' is a Vue conditional render, see app.js. see 'v-else below'  -->
+        <div v-if="showBooks">
+            <p>{{ title }} -- {{ author }} is {{ age }}</p>
+        </div>
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>    
+            <!-- <span v-if="!showBooks">Show Books</span>     -->
+            <span v-else>Show Books</span>    
+        </button>
+
+        <!-- 'v-show' is like v-if but uses 'style="display: none;" instead of inserting/extracting to/from DOM -->
+        <div v-show="showBooks">currently showing books</div>
+        
+        <!-- 'v-on' is a Vue directive with name 'click' -->
+        <button v-on:click="age++">Age ++</button>
+        <button v-on:click="age--">Age --</button>
+
+        <!-- @ is a Vue shortcut for 'v-on:' -->
+        <!-- <div @click="title = 'Fuzzywuzzy moosepants'">Title</div> -->
+        
+        <!-- same as above with component method -->
+        <div @click="changeTitle('Fuzzywuzzy moosepants')">Title</div>
+
+    </div>
+
+
+    <script src="app.js"></script>
 </body>
 </html>
