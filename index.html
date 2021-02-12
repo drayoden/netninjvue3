@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css">
     
     <title>Learning Vue3</title>
 </head>
@@ -13,10 +14,29 @@
 
     <h1>Hello Moose Muscles!</h1>
     <div id="app">
+
+        <!-- attribute binding, 'v-bind' allows the use of the 'url' object in app.js -->
+        <!-- can also use the 'v-bind' shortcut of ':' -->
+        <a v-bind:href="url" target="_blank">google</a><br>
+        <a :href="url" target="_blank">google</a>
         
         <!-- 'v-if' is a Vue conditional render, see app.js. see 'v-else below'  -->
         <div v-if="showBooks">
-            <p>{{ title }} -- {{ author }} is {{ age }}</p>
+            
+            <!-- replaced single 'book' object with an array of books, see app.js -->
+            <!-- <p>{{ title }} -- {{ author }} is {{ age }}</p> -->
+
+            <ul>
+                <!-- note the bound 'class' attribute below -->
+                <!-- in the v-for use 'book in books' or 'book in filteredBooks' - computed properties, see app.js -->
+                <li v-for="book in filteredBooks" @click="toggleFav(book)" :class="{ fav: book.isFav }">
+                    <!-- use attibute binding again here, see above -->
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
+
         </div>
 
         <button @click="toggleShowBooks">
@@ -37,7 +57,15 @@
         <!-- <div @click="title = 'Fuzzywuzzy moosepants'">Title</div> -->
         
         <!-- same as above with component method -->
-        <div @click="changeTitle('Fuzzywuzzy moosepants')">Title</div>
+        <div @click="changeTitle('Fuzzywuzzy moosepants')">Title</div><br>
+
+        <!-- mouse events -->
+        <!-- pass data to method -->
+        
+        <!-- <div class="box" @mouseover="handleEvent($event, 42)">mouse over</div>
+        <div class="box" @mouseleave="handleEvent">mouse leave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMouseMove">{{ x }} x {{ y }}</div> -->
 
     </div>
 
