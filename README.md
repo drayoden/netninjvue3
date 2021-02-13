@@ -10,4 +10,6 @@
 * vscode Vue syntax highlight extention: Vetur
 * will use the vue.js CDN first -- see v3.vuejs.org
 * created app.js -- vue code will go here
+* tut4 - Vue CLI for full Vue apps
+    * install - must have node installed (npm), istall globally: `npm install -g @vue/cli`
 
