@@ -32,6 +32,7 @@ github - NOTE: follows udemy course: https://github.com/iamshaunjp/Vue-3-Firebas
     * `<style scoped>` -- the 'scope' is for the component, performance hit, can just use more specific selectors.
     * global css file, see commented import in main.js can override global styles in each component.
     * slots - pass templates to components, i.e. pass a form to the modal component.
+    * teleport - 
 
 
     

@@ -1,9 +1,30 @@
 <template>
   <h1>My stuff</h1>
-  <div v-if="showModal">
-    <Modal :title="title" :header="header" :text="text" theme="sale" @close="toggleModal"/>  <!-- pass a prop to the Modal component  -->
-  </div>
+  
+  <teleport to='.modals' v-if="showModal">
+    <Modal theme="" @close="toggleModal">   <!-- create a 'slot' - use the explicit Modal open and close tags  -->
+      <template v-slot:links>  <!-- 'named' slot -->
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+      <h1>Giving away mooses!</h1>
+      <p>Grab your fuzzy butt noses and let's go!</p>
+    </Modal>
+  </teleport >
+
+  <teleport to='.modals' v-if="showModal2">
+    <Modal theme="sale" @close="toggleModal2">
+      <template v-slot:links>
+        <label for="email">email:</label>
+        <input type="email"  name="email">
+        <input type="button" value="send">
+      </template>
+      <p>sign up now!</p>
+    </Modal>
+  </teleport >
+
   <br><button @click="toggleModal">Modal</button>
+  <button @click="toggleModal2">Modal2</button>
 </template>
 
 <script>
@@ -17,9 +38,8 @@ export default {
   data() {
     return {
       title: 'My first Vue app...', 
-      header: 'Sign up for something...',
-      text: 'Get ready for MOOSES!',
       showModal: false,
+      showModal2: false,
     }
   }, 
   methods: {
@@ -32,6 +52,9 @@ export default {
 
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModal2() {
+      this.showModal2 = !this.showModal2;
     }
   }
 }
@@ -40,7 +63,7 @@ export default {
 <style>
 /* global styles */
 
-#app {
+#app, .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
