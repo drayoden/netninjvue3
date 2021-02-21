@@ -42,7 +42,14 @@ github - NOTE: follows udemy course: https://github.com/iamshaunjp/Vue-3-Firebas
     * custom events with data - pass reaction time from block to app then to results
     * pass data p->c (props), c->p (custom events)
 
-
+* forms - branch forms - 
+    * deleted everything, almost
+    * new vue app in current directory
+    * two-way data binding -- see Signupform.vue
+        * as we type an email address or password in the form 'v-model' allows data binding from the form to the component
+        * we can also bind data from the component to the form by giving email and password initial values in the component.
+    * keyboard events
+    * note @submit in the form tag, .prevent does exaclty what you think it does. tut7 (39:43)
  
 
 
