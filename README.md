@@ -50,7 +50,37 @@ github - NOTE: follows udemy course: https://github.com/iamshaunjp/Vue-3-Firebas
         * we can also bind data from the component to the form by giving email and password initial values in the component.
     * keyboard events
     * note @submit in the form tag, .prevent does exaclty what you think it does. tut7 (39:43)
- 
+ * vue router - since ONE html page is sent to the browser, vue switches out components as needed, all content in 'injected' into the App.vue (root; id="root").
+    * purged everythihng, almost
+    * vue looks at the route and nests components into the root as needed.
+    * vue router is a separate package - the vue cli can install the router when a new app is created:
+        * `vue create <name> | .` - create the new project
+        * choose `Manually select features`
+        * include the router (deselect linter)
+        * choose version 3.x
+        * use `history` mode for the router -- other option is `hash` mode.
+        * use default config file - `dedicated comfig files`
+        * do NOT save as preset
+    * we now have /src/router/index.js - containes a 'routes' array - each route object has 'path', 'name' and component.
+    * new `route-view` tag in App.vue, each 'route' component will be injected here when needed.
+    * when the server is started we now have a 'home' and 'about' nav bar at the top.
+    * very quick, it does not have to make the request to the server, it just injects the component
+    * see VERY cool way to abstract the path to a name in App.vue --> the 'About' router-link using the component name instead of the path.
+    * file structure - do anything but make it consistent
+        * route components inside /src/views
+        * hypothetical: if you needed a 'Jobsdetails.vue' for each of the jobs listed by Jobs.vue, you might create a /src/views/jobs folder and place all 'jobs' related components there.
+        * /src/components for reusable stuff: modals, buttons, etc.
+    * route parameters --> JobDetails.vue
+    * dynamic links - place a router-link (anchor) on each job so they can be clicked
+    * redirects & 404s
+        * redirect - very easy, see index.js
+        * catch all route for anything that does not exist -> 404
+            * index.js -> note the path for catch all: `'/:catchAll(.*)'` -- inside parens is a regX.
+    * dynamic navigation - plug into the browser history and insert routes as needed.
+* fetching data
+
+
+
 
 
 
