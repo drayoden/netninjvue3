@@ -50,7 +50,11 @@ github - NOTE: follows udemy course: https://github.com/iamshaunjp/Vue-3-Firebas
         * we can also bind data from the component to the form by giving email and password initial values in the component.
     * keyboard events
     * note @submit in the form tag, .prevent does exaclty what you think it does. tut7 (39:43)
- 
+ * vue router - since ONE html page is sent to the browser, vue switches out components as needed, all content in 'injected' into the App.vue (root; id="root").
+    * vue looks at the route and nests components into the root as needed.
+    * vue router is a separate package - the vue cli can install the router when a new app is created.
+    
+
 
 
 
