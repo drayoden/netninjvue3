@@ -77,9 +77,7 @@ github - NOTE: follows udemy course: https://github.com/iamshaunjp/Vue-3-Firebas
         * catch all route for anything that does not exist -> 404
             * index.js -> note the path for catch all: `'/:catchAll(.*)'` -- inside parens is a regX.
     * dynamic navigation - plug into the browser history and insert routes as needed.
-* fetching data
-
-
+* fetching data -- using JSON server
 
 
 

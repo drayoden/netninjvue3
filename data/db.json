@@ -1,0 +1,9 @@
+{
+    "jobs": [
+        {"title": "whisker weasle", "id": 1, "details": "mooses"},
+        {"title": "fuzzy pants", "id": 2, "details": "mooses"},
+        {"title": "moose breath", "id": 3, "details": "mooses"},
+        {"title": "wpouncer toes", "id": 4, "details": "mooses"},
+        {"title": "moose pants", "id": 5, "details": "mooses"}
+    ]
+}
