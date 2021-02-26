@@ -77,7 +77,8 @@ github - NOTE: follows udemy course: https://github.com/iamshaunjp/Vue-3-Firebas
         * catch all route for anything that does not exist -> 404
             * index.js -> note the path for catch all: `'/:catchAll(.*)'` -- inside parens is a regX.
     * dynamic navigation - plug into the browser history and insert routes as needed.
-* fetching data -- using JSON server
+* fetching data -- using JSON server  -- NOTE: if you get a console error ERR_BLOCKED_BY_CLIENT, this is CORS in Chrome. It may be due to the using the live server with the IP address and the json server with 'localhost'. Use the same 'domain' and it will go away.
+    * see the 'mounted' lifecycle hooks in Jobs.vue and JobDetails.vue.
 
 
 
